@@ -1,11 +1,11 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
     entry: {
         app: './src/main.js',
+        vendorStyles: ["./node_modules/bootstrap/dist/css/bootstrap.css"]
     },
     output: {
         filename: '[name].[chunkhash].js',
@@ -20,8 +20,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: /node_modules/,
-                use: [MiniCssExtractPlugin.loader, "css-loader"]
+                use: ["style-loader", "css-loader"]
             }
         ]
     },
@@ -31,11 +30,7 @@ module.exports = {
             template: "./src/index.html",
             scriptLoading: 'blocking',
         }),
-        new CleanWebpackPlugin(),
-        new MiniCssExtractPlugin({
-            filename: "[name].css",
-            chunkFilename: "[id].css"
-        })
+        new CleanWebpackPlugin()
     ],
     devServer: {
 
