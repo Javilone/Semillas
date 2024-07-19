@@ -27,7 +27,15 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
-            }
+            },
+            {
+                test: /\.(png|jpg)$/,
+                type: "asset/resource",
+            },
+            {
+                test: /\.html$/,
+                loader: "html-loader",
+            },
         ]
     },
     plugins: [

@@ -22,7 +22,15 @@ module.exports = {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: [MiniCssExtractPlugin.loader, "css-loader"]
-            }
+            },
+            {
+                test: /\.(png|jpg)$/,
+                type: "asset/resource",
+            },
+            {
+                test: /\.html$/,
+                loader: "html-loader",
+            },
         ]
     },
     plugins: [
