@@ -1,0 +1,11 @@
+.app-footer-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  background: linear-gradient(to right, #ab70f4, #fbeaff, #04e9c3);
+  color: #4b4453;
+  margin-top: 48px;
+}

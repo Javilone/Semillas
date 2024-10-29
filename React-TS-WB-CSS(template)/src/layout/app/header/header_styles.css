@@ -1,0 +1,10 @@
+.app-style {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 0.8vw;
+  background: linear-gradient(to right, #ab70f4, #fbeaff, #04e9c3);
+  color: #4b4453;
+}
